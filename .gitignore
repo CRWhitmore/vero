@@ -1,0 +1,22 @@
+# --- Virtual Environments ---
+.venv/
+venv/
+env/
+ENV/
+bin/
+lib/
+include/
+
+# --- Python / Bytecode ---
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- Streamlit / Local Testing ---
+.streamlit/config.toml
+.streamlit/static/
+# Note: Keep .streamlit/ if you have secrets.toml, 
+# but NEVER commit secrets.toml itself.
+secrets.toml
