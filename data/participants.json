@@ -1,0 +1,42 @@
+[
+  {
+    "participant_id": "P-BUYER-01",
+    "name": "Investor Name",
+    "role": "Buyer",
+    "organization": "Acme Capital Partners",
+    "kyc_status": "Approved",
+    "aml_status": "Approved",
+    "avatar_initials": "IN",
+    "avatar_color": "#007bff"
+  },
+  {
+    "participant_id": "P-SELLER-01",
+    "name": "Global Properties Inc.",
+    "role": "Seller",
+    "organization": "Global Properties Inc.",
+    "kyc_status": "Approved",
+    "aml_status": "Pending Review",
+    "avatar_initials": "GP",
+    "avatar_color": "#ffc107"
+  },
+  {
+    "participant_id": "P-BROKER-01",
+    "name": "John Doe",
+    "role": "Broker",
+    "organization": "Real Estate Co.",
+    "kyc_status": "Approved",
+    "aml_status": "Approved",
+    "avatar_initials": "JD",
+    "avatar_color": "#17a2b8"
+  },
+  {
+    "participant_id": "P-LEGAL-01",
+    "name": "Jane Smith",
+    "role": "Legal Counsel",
+    "organization": "Smith & Partners LLP",
+    "kyc_status": "Approved",
+    "aml_status": "Approved",
+    "avatar_initials": "JS",
+    "avatar_color": "#6c757d"
+  }
+]

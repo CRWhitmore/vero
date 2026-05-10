@@ -1,0 +1,20 @@
+[
+  {
+    "deal_id": "VERO-2024-00123",
+    "listing_id": "PROP-001",
+    "current_stage_index": 0,
+    "stages": [
+      "Offer Submitted",
+      "KYC/AML Verification",
+      "Due Diligence",
+      "Escrow Management",
+      "Contract Negotiation",
+      "Closing"
+    ],
+    "status_label": "Offer Submitted - Awaiting Seller Review",
+    "created_at": "2024-01-15T10:00:00Z",
+    "participant_ids": ["P-BUYER-01", "P-SELLER-01", "P-BROKER-01", "P-LEGAL-01"],
+    "escrow_id": "ESC-001",
+    "kyc_summary_id": "KYC-001"
+  }
+]

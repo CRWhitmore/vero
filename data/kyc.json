@@ -1,0 +1,21 @@
+[
+  {
+    "kyc_summary_id": "KYC-001",
+    "deal_id": "VERO-2024-00123",
+    "entries": [
+      {"party": "Buyer", "type": "KYC", "status": "Approved", "updated_at": "2024-01-16"},
+      {"party": "Buyer", "type": "AML", "status": "Approved", "updated_at": "2024-01-16"},
+      {"party": "Seller", "type": "KYC", "status": "Approved", "updated_at": "2024-01-17"},
+      {"party": "Seller", "type": "AML", "status": "Pending Review", "updated_at": "2024-01-18"},
+      {"party": "Broker", "type": "KYC", "status": "Approved", "updated_at": "2024-01-15"}
+    ],
+    "required_documents": [
+      "Passport / National ID",
+      "Proof of Address",
+      "Certificate of Incorporation",
+      "UBO Declaration",
+      "Source of Funds Statement",
+      "Sanctions Screening Report"
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "escrow_id": "ESC-001",
+    "deal_id": "VERO-2024-00123",
+    "status": "Initiated",
+    "amount": 150000000,
+    "currency": "USD",
+    "agent": "SecureTrust Escrow Inc.",
+    "release_conditions": [
+      "All KYC/AML approvals received from all parties",
+      "Sales & Purchase Agreement (SPA) fully executed",
+      "Title commitment cleared with no objections",
+      "Buyer's loan funding confirmed by lender",
+      "Smart contract conditions verified on-chain"
+    ]
+  }
+]

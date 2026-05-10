@@ -1,0 +1,74 @@
+[
+  {
+    "document_id": "DOC-LOI-001",
+    "deal_id": "*",
+    "name": "Letter of Intent (LOI).pdf",
+    "category": "Offer",
+    "uploaded_at": "2024-01-15",
+    "preview_text": "LETTER OF INTENT — This non-binding letter of intent (LOI) sets forth the principal terms of the proposed acquisition of Downtown Office Tower by Acme Capital Partners from Global Properties Inc. for a purchase price of USD $150,000,000, subject to satisfactory due diligence and execution of a definitive Sales & Purchase Agreement."
+  },
+  {
+    "document_id": "DOC-KYC-001",
+    "deal_id": "*",
+    "name": "KYC Documents.pdf",
+    "category": "Compliance",
+    "uploaded_at": "2024-01-16",
+    "preview_text": "KYC FILE — Identity verification, beneficial ownership disclosures, and proof-of-address records for the Buyer entity. All documents validated against government registries via integrated KYC providers. Status: APPROVED."
+  },
+  {
+    "document_id": "DOC-AML-001",
+    "deal_id": "*",
+    "name": "AML Compliance Declaration.pdf",
+    "category": "Compliance",
+    "uploaded_at": "2024-01-17",
+    "preview_text": "AML COMPLIANCE DECLARATION — Source of funds attestation and sanctions/PEP screening results for all transaction parties. Reviewed by compliance officer. Risk Rating: LOW."
+  },
+  {
+    "document_id": "DOC-DD-001",
+    "deal_id": "*",
+    "name": "Property Due Diligence Report.pdf",
+    "category": "Due Diligence",
+    "uploaded_at": "2024-01-22",
+    "preview_text": "DUE DILIGENCE REPORT — Comprehensive review of property condition, title, environmental status, and tenant rolls. No material findings. Recommended to proceed to contract."
+  },
+  {
+    "document_id": "DOC-ESC-001",
+    "deal_id": "*",
+    "name": "Escrow Agreement.pdf",
+    "category": "Escrow",
+    "uploaded_at": "2024-01-25",
+    "preview_text": "ESCROW AGREEMENT — Tri-party agreement between Buyer, Seller, and SecureTrust Escrow Inc. governing the holding and release of $150,000,000 in earnest money and purchase funds, subject to specified release conditions."
+  },
+  {
+    "document_id": "DOC-SPA-001",
+    "deal_id": "*",
+    "name": "Sales & Purchase Agreement (SPA).pdf",
+    "category": "Contract",
+    "uploaded_at": "2024-01-30",
+    "preview_text": "SALES & PURCHASE AGREEMENT — Definitive contract setting forth the binding terms of sale, including representations, warranties, indemnities, conditions precedent, and closing mechanics for the Downtown Office Tower transaction."
+  },
+  {
+    "document_id": "DOC-SC-001",
+    "deal_id": "*",
+    "name": "Smart Contract Terms.pdf",
+    "category": "Contract",
+    "uploaded_at": "2024-02-01",
+    "preview_text": "SMART CONTRACT TERMS — Codified release conditions deployed to the Vero blockchain. Funds will be auto-released upon programmatic verification of all conditions precedent. Contract address: 0xA1B2...F4E5."
+  },
+  {
+    "document_id": "DOC-FIN-001",
+    "deal_id": "*",
+    "name": "Financial Proforma.xlsx",
+    "category": "Financial",
+    "uploaded_at": "2024-01-20",
+    "preview_text": "FINANCIAL PROFORMA — 10-year cash flow projection including NOI, cap-rate analysis, IRR scenarios, and sensitivity tables for the Downtown Office Tower acquisition."
+  },
+  {
+    "document_id": "DOC-TITLE-001",
+    "deal_id": "*",
+    "name": "Title Commitment.pdf",
+    "category": "Title",
+    "uploaded_at": "2024-01-26",
+    "preview_text": "PRELIMINARY TITLE COMMITMENT — Issued by First American Title. No outstanding liens or encumbrances. Title insurance to be issued upon closing in the amount of the purchase price."
+  }
+]

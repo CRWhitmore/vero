@@ -1,0 +1,190 @@
+[
+  {
+    "listing_id": "PROP-001",
+    "name": "Downtown Office Tower",
+    "property_type": "Office",
+    "icon": "🏙️",
+    "card_color": "#007bff",
+    "location": {
+      "city": "New York",
+      "country": "USA",
+      "address": "123 Main Street, Financial District, New York, NY 10001"
+    },
+    "price": {
+      "amount": 150000000,
+      "currency": "USD",
+      "display": "$150,000,000"
+    },
+    "size": {"sqft": 500000, "sqm": 46450},
+    "short_description": "Prime Grade A office tower in the heart of the financial district. 50 stories with modern amenities and stunning city views.",
+    "long_description": "This iconic 50-story office tower stands as a beacon in New York's bustling Financial District. Completed in 2010, it boasts state-of-the-art infrastructure, LEED Gold certification, and panoramic views of Manhattan and the Hudson River. The property offers flexible floor plates, high-speed elevators, and a grand lobby designed by a renowned architect. Ideal for major corporations seeking a prestigious address. Amenities include a tenant-only fitness center, multiple conference facilities, a rooftop terrace, and direct access to public transportation.",
+    "key_features": [
+      "Grade A Office Space",
+      "LEED Gold Certified",
+      "Panoramic City Views",
+      "Modern Fitness Center",
+      "Rooftop Terrace",
+      "Excellent Transport Links",
+      "24/7 Security",
+      "High-Speed Fiber Optic"
+    ],
+    "images": {"hero": "office_hero.jpg", "gallery": []},
+    "badges": ["Blockchain Secure"],
+    "broker": "John Doe (Real Estate Co.)"
+  },
+  {
+    "listing_id": "PROP-002",
+    "name": "High Street Retail Unit",
+    "property_type": "Retail",
+    "icon": "🛍️",
+    "card_color": "#28a745",
+    "location": {
+      "city": "London",
+      "country": "UK",
+      "address": "45 Oxford Street, London, W1D 2DZ"
+    },
+    "price": {
+      "amount": 5000000,
+      "currency": "GBP",
+      "display": "£5,000,000"
+    },
+    "size": {"sqft": 12000, "sqm": 1115},
+    "short_description": "Excellent retail opportunity on a bustling high street with heavy foot traffic. Ideal for fashion, F&B, or services.",
+    "long_description": "Premium retail unit located on one of London's most prestigious shopping streets. The unit features double-height ceilings, floor-to-ceiling windows, and over 30 metres of street frontage. Strong covenant in place with a blue-chip tenant, providing immediate rental income. Excellent transport connectivity via underground and bus routes.",
+    "key_features": [
+      "High Foot Traffic",
+      "Prime Frontage",
+      "Blue-Chip Tenant",
+      "Recently Refurbished",
+      "Underground Access",
+      "Long Lease in Place"
+    ],
+    "images": {"hero": "retail_hero.jpg", "gallery": []},
+    "badges": ["Blockchain Secure"],
+    "broker": "Emma Watson (London Commercial Group)"
+  },
+  {
+    "listing_id": "PROP-003",
+    "name": "Logistics Hub Warehouse",
+    "property_type": "Industrial",
+    "icon": "🏭",
+    "card_color": "#ffc107",
+    "location": {
+      "city": "Dubai",
+      "country": "UAE",
+      "address": "Plot 42, Jebel Ali Free Zone, Dubai"
+    },
+    "price": {
+      "amount": 25000000,
+      "currency": "AED",
+      "display": "AED 25,000,000"
+    },
+    "size": {"sqft": 250000, "sqm": 23225},
+    "short_description": "Modern warehouse facility with excellent connectivity to major highways and ports. High ceilings and multiple loading docks.",
+    "long_description": "State-of-the-art logistics facility located in Jebel Ali Free Zone, the premier industrial hub of the Middle East. The property features 15-metre clear ceiling heights, 24 dock-high loading bays, ESFR sprinkler system, and ample yard space for trailer parking. Perfect for e-commerce, third-party logistics, or distribution operations.",
+    "key_features": [
+      "15m Clear Heights",
+      "24 Loading Docks",
+      "ESFR Sprinkler System",
+      "Free Zone Benefits",
+      "Port Connectivity",
+      "Highway Access"
+    ],
+    "images": {"hero": "warehouse_hero.jpg", "gallery": []},
+    "badges": ["Blockchain Secure"],
+    "broker": "Ahmed Al-Mansoori (Gulf Properties)"
+  },
+  {
+    "listing_id": "PROP-004",
+    "name": "Boutique Hotel Investment",
+    "property_type": "Hotel",
+    "icon": "🏨",
+    "card_color": "#dc3545",
+    "location": {
+      "city": "Paris",
+      "country": "France",
+      "address": "12 Rue de Rivoli, 75001 Paris"
+    },
+    "price": {
+      "amount": 35000000,
+      "currency": "EUR",
+      "display": "€35,000,000"
+    },
+    "size": {"sqft": 45000, "sqm": 4180},
+    "short_description": "Charming boutique hotel in a prime tourist location. Recently renovated with high occupancy rates and strong financials.",
+    "long_description": "Elegant 80-room boutique hotel housed in a 19th-century Haussmann-style building, just steps from the Louvre. Fully renovated in 2021, the property includes a Michelin-recommended restaurant, rooftop bar, spa, and conference facilities. Year-round occupancy averages 85% with strong ADR performance.",
+    "key_features": [
+      "80 Guest Rooms",
+      "Michelin Restaurant",
+      "Rooftop Bar",
+      "Recently Renovated",
+      "Prime Tourist Location",
+      "85% Occupancy"
+    ],
+    "images": {"hero": "hotel_hero.jpg", "gallery": []},
+    "badges": ["Blockchain Secure"],
+    "broker": "Marie Dubois (Paris Hotel Brokers)"
+  },
+  {
+    "listing_id": "PROP-005",
+    "name": "Tech Park Mixed-Use",
+    "property_type": "Office",
+    "icon": "💻",
+    "card_color": "#6f42c1",
+    "location": {
+      "city": "Singapore",
+      "country": "Singapore",
+      "address": "1 One-North Gateway, Singapore 138632"
+    },
+    "price": {
+      "amount": 220000000,
+      "currency": "SGD",
+      "display": "S$220,000,000"
+    },
+    "size": {"sqft": 380000, "sqm": 35300},
+    "short_description": "Modern tech-park campus with R&D labs, flex office space, and amenities. Tenanted by leading tech firms.",
+    "long_description": "Award-winning sustainable mixed-use development in Singapore's premier technology corridor. Features wet/dry labs, raised-floor flex office space, food halls, childcare, and direct MRT access. Anchor tenants include global cloud and biotech leaders on long-term leases.",
+    "key_features": [
+      "Wet/Dry Lab Capability",
+      "MRT Direct Access",
+      "Green Mark Platinum",
+      "Long-Term Anchor Tenants",
+      "On-Site Amenities",
+      "EV Charging"
+    ],
+    "images": {"hero": "tech_hero.jpg", "gallery": []},
+    "badges": ["Blockchain Secure"],
+    "broker": "Wei Lin Tan (Asia Pacific CRE)"
+  },
+  {
+    "listing_id": "PROP-006",
+    "name": "Industrial Land Parcel",
+    "property_type": "Land",
+    "icon": "🌍",
+    "card_color": "#17a2b8",
+    "location": {
+      "city": "Frankfurt",
+      "country": "Germany",
+      "address": "Industriestraße, 60314 Frankfurt am Main"
+    },
+    "price": {
+      "amount": 18000000,
+      "currency": "EUR",
+      "display": "€18,000,000"
+    },
+    "size": {"sqft": 540000, "sqm": 50000},
+    "short_description": "Development-ready industrial land parcel with all permits in place. Excellent autobahn and rail access.",
+    "long_description": "Shovel-ready 5-hectare industrial land parcel in Frankfurt's eastern logistics belt. All zoning, environmental, and building permits secured. Direct rail siding access and 2 km from A661 autobahn. Ideal for last-mile distribution or light manufacturing.",
+    "key_features": [
+      "Permits Secured",
+      "Rail Siding",
+      "Autobahn Access",
+      "Utilities at Boundary",
+      "Zoning B-Plan Approved",
+      "Environmental Cleared"
+    ],
+    "images": {"hero": "land_hero.jpg", "gallery": []},
+    "badges": ["Blockchain Secure"],
+    "broker": "Hans Mueller (Frankfurt Land Brokers)"
+  }
+]

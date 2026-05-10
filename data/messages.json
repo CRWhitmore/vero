@@ -1,0 +1,79 @@
+[
+  {
+    "message_id": "MSG-001",
+    "deal_id": "*",
+    "sender": "John Doe (Broker)",
+    "role": "Broker",
+    "avatar_initials": "JD",
+    "avatar_color": "#ffc107",
+    "timestamp": "2024-01-15 10:30 AM",
+    "text": "Welcome to the deal room for Downtown Office Tower. Please review the Letter of Intent (LOI) by EOD today — it's available in the Documents tab.",
+    "is_self": false
+  },
+  {
+    "message_id": "MSG-002",
+    "deal_id": "*",
+    "sender": "You (Investor Name)",
+    "role": "Buyer",
+    "avatar_initials": "IN",
+    "avatar_color": "#007bff",
+    "timestamp": "2024-01-15 01:15 PM",
+    "text": "Thanks John. LOI reviewed and approved on our side. Awaiting seller's signature.",
+    "is_self": true
+  },
+  {
+    "message_id": "MSG-003",
+    "deal_id": "*",
+    "sender": "Vero System",
+    "role": "System",
+    "avatar_initials": "VS",
+    "avatar_color": "#004a8f",
+    "timestamp": "2024-01-16 09:00 AM",
+    "text": "🔐 KYC verification for Buyer 'Investor Name' has been successfully approved. Documents have been hashed and recorded on-chain. Advancing checklist to next item.",
+    "is_self": false
+  },
+  {
+    "message_id": "MSG-004",
+    "deal_id": "*",
+    "sender": "Jane Smith (Legal)",
+    "role": "Legal Counsel",
+    "avatar_initials": "JS",
+    "avatar_color": "#6c757d",
+    "timestamp": "2024-01-17 11:20 AM",
+    "text": "Confirming receipt of signed LOI. Proceeding with due diligence checklist preparation. We'll need access to the data room by Friday.",
+    "is_self": false
+  },
+  {
+    "message_id": "MSG-005",
+    "deal_id": "*",
+    "sender": "Vero System",
+    "role": "System",
+    "avatar_initials": "VS",
+    "avatar_color": "#004a8f",
+    "timestamp": "2024-01-18 02:45 PM",
+    "text": "⚠️ AML review for Seller 'Global Properties Inc.' is pending. Additional UBO documentation requested. Please upload via the Documents tab.",
+    "is_self": false
+  },
+  {
+    "message_id": "MSG-006",
+    "deal_id": "*",
+    "sender": "Global Properties Inc. (Seller)",
+    "role": "Seller",
+    "avatar_initials": "GP",
+    "avatar_color": "#ffc107",
+    "timestamp": "2024-01-19 08:50 AM",
+    "text": "We've uploaded the requested UBO declarations and shareholder registry. Please confirm receipt.",
+    "is_self": false
+  },
+  {
+    "message_id": "MSG-007",
+    "deal_id": "*",
+    "sender": "You (Investor Name)",
+    "role": "Buyer",
+    "avatar_initials": "IN",
+    "avatar_color": "#007bff",
+    "timestamp": "2024-01-19 09:15 AM",
+    "text": "Great. Once AML clears, can we schedule the property walkthrough next week?",
+    "is_self": true
+  }
+]

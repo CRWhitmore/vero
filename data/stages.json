@@ -1,0 +1,8 @@
+[
+  {"index": 0, "name": "Offer Submitted",        "description": "Buyer submits Letter of Intent (LOI). Seller reviews and acknowledges."},
+  {"index": 1, "name": "KYC/AML Verification",   "description": "All parties undergo identity, beneficial ownership, sanctions and PEP screening."},
+  {"index": 2, "name": "Due Diligence",          "description": "Buyer's team reviews property condition, title, environmental, and financial documents."},
+  {"index": 3, "name": "Escrow Management",      "description": "Escrow opened with agent. Earnest money deposited. Release conditions tracked on-chain."},
+  {"index": 4, "name": "Contract Negotiation",   "description": "Sales & Purchase Agreement drafted, redlined, and digitally signed. Smart contract terms recorded."},
+  {"index": 5, "name": "Closing",                "description": "Final walkthrough, deed recordation, funds released from escrow, blockchain audit archive."}
+]
