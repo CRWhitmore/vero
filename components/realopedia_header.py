@@ -33,10 +33,8 @@ def render_realopedia_header(active: str = "Buy") -> None:
                     border-radius: 6px; margin-bottom: 20px;
                     display: flex; justify-content: space-between;
                     align-items: center;">
-            <h1 style="margin: 0; font-size: 28px; font-weight: bold;
-                       color: white;">
-                🏢 Realopedia
-            </h1>
+            <img src="images/mainlogo.png" alt="Realopedia Logo" 
+                 style="height: 40px; width: auto;">
             <nav>{nav_html}</nav>
         </div>
         """,
