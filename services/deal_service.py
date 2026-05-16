@@ -21,14 +21,16 @@ _PARTICIPANTS_PATH = os.path.join(
 )
 
 
+@st.cache_data(show_spinner=False)
 def _load_deals() -> List[Dict[str, Any]]:
-    """Load deals from JSON file."""
+    """Load deals from JSON file (cached)."""
     with open(_DATA_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
+@st.cache_data(show_spinner=False)
 def _load_participants() -> List[Dict[str, Any]]:
-    """Load participants from JSON file."""
+    """Load participants from JSON file (cached)."""
     with open(_PARTICIPANTS_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
 

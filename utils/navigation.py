@@ -13,8 +13,10 @@ def _safe_switch(target: str) -> None:
     """Try to switch to the target Streamlit page (if API is available)."""
     try:
         st.switch_page(target)
-    except Exception:
-        # Older Streamlit fallback — write a hint and rerun
+    except AttributeError:
+        # st.switch_page doesn't exist on this Streamlit version.
+        # Set a flag so the target page can read it on the next rerun,
+        # then force a rerun so the sidebar navigation picks up the change.
         st.session_state["navigate_to"] = target
         st.rerun()
 

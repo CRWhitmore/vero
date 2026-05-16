@@ -63,43 +63,26 @@ def render_document_list(documents: List[Dict[str, Any]]) -> None:
     with viewer_col:
         viewed = st.session_state.get("viewed_document")
         if viewed:
+            preview_text = viewed.get(
+                "preview_text",
+                "This is a placeholder document preview. In production, "
+                "the secure PDF viewer would render the actual file "
+                "with watermarking and audit logging.",
+            )
             st.markdown(
-                f"""
-                <div style="background-color: #f0f0f0;
-                            border: 1px dashed #ccc;
-                            border-radius: 8px; padding: 30px;
-                            text-align: center; min-height: 400px;">
-                    <h4 style="color: #333; margin-bottom: 10px;">
-                        📄 Document Viewer
-                    </h4>
-                    <p style="font-size: 18px; color: #007bff;
-                              font-weight: bold;">
-                        Viewing: {viewed['name']}
-                    </p>
-                    <p style="color: #666; font-size: 13px;">
-                        Category: {viewed.get('category', 'General')}
-                    </p>
-                    <hr>
-                    <div style="background-color: white;
-                                padding: 30px; border-radius: 6px;
-                                margin-top: 20px;
-                                box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-                                text-align: left;">
-                        <p style="font-family: 'Times New Roman', serif;
-                                  color: #333; line-height: 1.7;">
-                            <em>{viewed.get('preview_text',
-                            'This is a placeholder document preview. In production, '
-                            'the secure PDF viewer would render the actual file '
-                            'with watermarking and audit logging.')}</em>
-                        </p>
-                        <p style="text-align: right; color: #999;
-                                  font-size: 12px; margin-top: 30px;">
-                            🔐 Hash recorded on blockchain:
-                            <code>0x{viewed['document_id'].lower()}...a4f2</code>
-                        </p>
-                    </div>
-                </div>
-                """,
+                f'<div style="background-color: #f0f0f0; border: 1px dashed #ccc;'
+                f' border-radius: 8px; padding: 30px; text-align: center; min-height: 400px;">'
+                f'<h4 style="color: #333; margin-bottom: 10px;">📄 Document Viewer</h4>'
+                f'<p style="font-size: 18px; color: #007bff; font-weight: bold;">Viewing: {viewed["name"]}</p>'
+                f'<p style="color: #666; font-size: 13px;">Category: {viewed.get("category", "General")}</p>'
+                f'<hr>'
+                f'<div style="background-color: white; padding: 30px; border-radius: 6px;'
+                f' margin-top: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: left;">'
+                f'<p style="font-family: \'Times New Roman\', serif; color: #333; line-height: 1.7;">'
+                f'<em>{preview_text}</em></p>'
+                f'<p style="text-align: right; color: #999; font-size: 12px; margin-top: 30px;">'
+                f'🔐 Hash recorded on blockchain: <code>0x{viewed["document_id"].lower()}...a4f2</code>'
+                f'</p></div></div>',
                 unsafe_allow_html=True,
             )
         else:

@@ -32,7 +32,11 @@ def render_progress_tracker(stages: List[str], current_index: int) -> None:
 
     # Build the stage HTML
     n = len(stages)
-    pct = int(((current_index) / max(n - 1, 1)) * 100) if n > 1 else 0
+    # Percentage of the track that should be filled (0–100)
+    pct = int((current_index / max(n - 1, 1)) * 100) if n > 1 else 0
+    # The track spans ~90% of the container width (5% margin each side),
+    # so the fill width is pct * 0.9 — computed in Python, not CSS calc().
+    fill_pct = int(pct * 0.9)
 
     steps_html = ""
     for i, name in enumerate(stages):
@@ -52,20 +56,18 @@ def render_progress_tracker(stages: List[str], current_index: int) -> None:
             text_color = "#666"
             text_weight = "normal"
 
-        steps_html += f"""
-        <div style="flex: 1; text-align: center; position: relative; z-index: 1;">
-            <div style="width: 36px; height: 36px; border-radius: 50%;
-                        background-color: {bg}; color: {color};
-                        display: flex; align-items: center; justify-content: center;
-                        margin: 0 auto 8px auto; font-weight: bold;
-                        font-size: 14px; border: 3px solid white;
-                        box-shadow: 0 0 0 2px {bg};">{icon}</div>
-            <p style="font-size: 12px; color: {text_color};
-                      font-weight: {text_weight}; margin: 0;">
-                {name}
-            </p>
-        </div>
-        """
+        steps_html += (
+            f'<div style="flex: 1; text-align: center; position: relative; z-index: 1;">'
+            f'<div style="width: 36px; height: 36px; border-radius: 50%;'
+            f' background-color: {bg}; color: {color};'
+            f' display: flex; align-items: center; justify-content: center;'
+            f' margin: 0 auto 8px auto; font-weight: bold;'
+            f' font-size: 14px; border: 3px solid white;'
+            f' box-shadow: 0 0 0 2px {bg};">{icon}</div>'
+            f'<p style="font-size: 12px; color: {text_color};'
+            f' font-weight: {text_weight}; margin: 0;">{name}</p>'
+            f'</div>'
+        )
 
     st.markdown(
         f"""
@@ -83,7 +85,7 @@ def render_progress_tracker(stages: List[str], current_index: int) -> None:
                             z-index: 0;"></div>
                 <!-- Progress fill -->
                 <div style="position: absolute; top: 18px; left: 5%;
-                            width: calc({pct}% * 0.9); height: 4px;
+                            width: {fill_pct}%; height: 4px;
                             background-color: #28a745; border-radius: 2px;
                             z-index: 0;"></div>
                 {steps_html}

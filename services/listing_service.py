@@ -11,6 +11,7 @@ be swapped 1:1 for HTTP requests later.
 from typing import List, Dict, Any, Optional
 import json
 import os
+import streamlit as st
 
 # Resolve the path to the data file relative to this module
 _DATA_PATH = os.path.join(
@@ -20,8 +21,9 @@ _DATA_PATH = os.path.join(
 )
 
 
+@st.cache_data(show_spinner=False)
 def _load_listings() -> List[Dict[str, Any]]:
-    """Load and return all listings from the static JSON file."""
+    """Load and return all listings from the static JSON file (cached)."""
     with open(_DATA_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
 

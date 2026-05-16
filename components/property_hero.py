@@ -11,14 +11,34 @@ import os
 
 from utils.navigation import go_to_deal_room
 
+# Resolve the images directory relative to this module so it works regardless
+# of the working directory Streamlit is launched from.
+_IMAGES_DIR = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "images"
+)
 
+# MIME type map for correct Content-Type in data URIs
+_MIME_MAP = {
+    ".jpg": "image/jpeg",
+    ".jpeg": "image/jpeg",
+    ".jfif": "image/jpeg",
+    ".png": "image/png",
+    ".gif": "image/gif",
+    ".webp": "image/webp",
+    ".svg": "image/svg+xml",
+}
+
+
+@st.cache_data(show_spinner=False)
 def get_image_base64_helper(image_name: str) -> str:
-    """Helper to convert image file to base64."""
-    image_path = os.path.join("images", image_name)
+    """Helper to convert image file to base64 (cached per filename)."""
+    image_path = os.path.join(_IMAGES_DIR, image_name)
+    ext = os.path.splitext(image_name)[1].lower()
+    mime = _MIME_MAP.get(ext, "image/jpeg")
     try:
         with open(image_path, "rb") as image_file:
             encoded_string = base64.b64encode(image_file.read()).decode()
-        return f"data:image/jpeg;base64,{encoded_string}"
+        return f"data:{mime};base64,{encoded_string}"
     except FileNotFoundError:
         return None
 

@@ -120,9 +120,6 @@ def render_tabs(deal: dict, listing: dict) -> None:
             if escrow:
                 render_escrow_panel(escrow)
 
-        st.markdown("<br>", unsafe_allow_html=True)
-        render_next_stage_button(deal, listing)
-
     # --- DOCUMENTS TAB -------------------------------------------------------
     with docs_tab:
         render_document_list(documents)
@@ -184,32 +181,25 @@ def render_tasks_panel(deal: dict) -> None:
     items_html = ""
     for task, done in tasks:
         if done:
-            items_html += f"""
-            <li style="padding: 10px; margin-bottom: 6px;
-                       background-color: #d4edda; border-radius: 5px;
-                       border-left: 4px solid #28a745;
-                       text-decoration: line-through; color: #155724;">
-                ✅ {task}
-            </li>
-            """
+            items_html += (
+                f'<li style="padding: 10px; margin-bottom: 6px;'
+                f' background-color: #d4edda; border-radius: 5px;'
+                f' border-left: 4px solid #28a745;'
+                f' text-decoration: line-through; color: #155724;">'
+                f'✅ {task}</li>'
+            )
         else:
-            items_html += f"""
-            <li style="padding: 10px; margin-bottom: 6px;
-                       background-color: #fff3cd; border-radius: 5px;
-                       border-left: 4px solid #ffc107; color: #856404;">
-                ⏳ {task}
-            </li>
-            """
+            items_html += (
+                f'<li style="padding: 10px; margin-bottom: 6px;'
+                f' background-color: #fff3cd; border-radius: 5px;'
+                f' border-left: 4px solid #ffc107; color: #856404;">'
+                f'⏳ {task}</li>'
+            )
 
     st.markdown(
-        f"""
-        <h3 style="font-size: 22px; color: #333; margin: 0 0 15px 0;">
-            ✅ Tasks for stage: <em>{cur_stage}</em>
-        </h3>
-        <ul style="list-style-type: none; padding: 0; margin: 0;">
-            {items_html}
-        </ul>
-        """,
+        f'<h3 style="font-size: 22px; color: #333; margin: 0 0 15px 0;">'
+        f'✅ Tasks for stage: <em>{cur_stage}</em></h3>'
+        f'<ul style="list-style-type: none; padding: 0; margin: 0;">{items_html}</ul>',
         unsafe_allow_html=True,
     )
 
@@ -217,7 +207,21 @@ def render_tasks_panel(deal: dict) -> None:
 def main() -> None:
     """Page entry."""
     init_session_state()
-    render_vero_header(investor_name="Investor Name")
+    # Pull the buyer's name from participants if available; fall back gracefully
+    deals_state = st.session_state.get("deals", {})
+    listing_id_for_name = st.session_state.get("selected_property_id")
+    investor_name = "Investor"
+    if listing_id_for_name and listing_id_for_name in deals_state:
+        deal_preview = deals_state[listing_id_for_name]
+        from services.deal_service import get_participants as _gp
+        participants_preview = _gp(deal_preview.get("participant_ids", []))
+        buyer = next(
+            (p for p in participants_preview if p.get("role", "").lower() == "buyer"),
+            None,
+        )
+        if buyer:
+            investor_name = buyer.get("name", "Investor")
+    render_vero_header(investor_name=investor_name)
 
     listing_id = st.session_state.get("selected_property_id")
     listing = get_listing(listing_id) if listing_id else None
@@ -245,6 +249,9 @@ def main() -> None:
 
     # Progress tracker (always visible at top)
     render_progress_tracker(deal["stages"], deal["current_stage_index"])
+
+    # Next stage button — always visible, directly below the progress bar
+    render_next_stage_button(deal, listing)
 
     # Tabbed content
     render_tabs(deal, listing)

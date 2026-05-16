@@ -1,0 +1,4 @@
+{
+    "python.defaultInterpreterPath": "/home/charles/prototypes/vero/.venv/bin/python",
+    "python.terminal.activateEnvironment": true
+}

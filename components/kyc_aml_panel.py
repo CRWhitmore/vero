@@ -35,18 +35,15 @@ def render_kyc_aml_panel(kyc_summary: Dict[str, Any]) -> None:
     for entry in kyc_summary.get("entries", []):
         c = color_map.get(entry["status"], "#6c757d")
         ic = icon_map.get(entry["status"], "•")
-        entries_html += f"""
-        <li style="margin-bottom: 10px; font-size: 15px;
-                   padding: 8px 12px; background-color: #fafafa;
-                   border-left: 4px solid {c}; border-radius: 4px;">
-            <strong>{entry['party']} {entry['type']}:</strong>
-            <span style="color: {c}; font-weight: bold;
-                         margin-left: 8px;">{ic} {entry['status']}</span>
-            <span style="float: right; font-size: 12px; color: #999;">
-                Updated: {entry.get('updated_at', '—')}
-            </span>
-        </li>
-        """
+        entries_html += (
+            f'<li style="margin-bottom: 10px; font-size: 15px;'
+            f' padding: 8px 12px; background-color: #fafafa;'
+            f' border-left: 4px solid {c}; border-radius: 4px;">'
+            f'<strong>{entry["party"]} {entry["type"]}:</strong>'
+            f'<span style="color: {c}; font-weight: bold; margin-left: 8px;">{ic} {entry["status"]}</span>'
+            f'<span style="float: right; font-size: 12px; color: #999;">Updated: {entry.get("updated_at", "—")}</span>'
+            f'</li>'
+        )
 
     docs_html = "".join(
         f'<span style="display: inline-block; background-color: #e9ecef; '

@@ -4,12 +4,21 @@ components/realopedia_header.py
 Renders the Realopedia branded top header with logo and navigation.
 """
 
+import os
 import streamlit as st
 import base64
 
 
-def get_image_base64(image_path):
-    """Convert image to base64 for embedding in HTML."""
+# Resolve logo path relative to this module file
+# Logo-relaopedia.png is RGBA (transparent background) — correct for dark headers
+_LOGO_PATH = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "images", "Logo-relaopedia.png"
+)
+
+
+@st.cache_data(show_spinner=False)
+def get_image_base64(image_path: str) -> str | None:
+    """Convert image to base64 for embedding in HTML (cached)."""
     try:
         with open(image_path, "rb") as image_file:
             encoded_string = base64.b64encode(image_file.read()).decode()
@@ -37,10 +46,21 @@ def render_realopedia_header(active: str = "Buy") -> None:
             f'opacity: {opacity};">{item}</a>'
         )
 
-    # Get base64 encoded image
-    logo_src = get_image_base64("images/mainlogo.png")
-    if logo_src is None:
-        logo_src = "🏢"  # Fallback if image not found
+    # Get base64 encoded image using the absolute path resolved at module load
+    logo_src = get_image_base64(_LOGO_PATH)
+
+    # Build the logo element: use <img> when we have a data URI, fall back to
+    # a styled <span> with an emoji so the header HTML stays valid.
+    if logo_src:
+        logo_html = (
+            f'<img src="{logo_src}" alt="Realopedia Logo" '
+            f'style="height: 40px; width: auto;">'
+        )
+    else:
+        logo_html = (
+            '<span style="font-size: 28px; line-height: 40px;" '
+            'aria-label="Realopedia Logo">🏢</span>'
+        )
 
     st.markdown(
         f"""
@@ -49,8 +69,7 @@ def render_realopedia_header(active: str = "Buy") -> None:
                     border-radius: 6px; margin-bottom: 20px;
                     display: flex; justify-content: space-between;
                     align-items: center;">
-            <img src="{logo_src}" alt="Realopedia Logo" 
-                 style="height: 40px; width: auto;">
+            {logo_html}
             <nav>{nav_html}</nav>
         </div>
         """,

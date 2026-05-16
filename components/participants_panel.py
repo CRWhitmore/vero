@@ -36,20 +36,21 @@ def render_participants_panel(participants: List[Dict[str, Any]]) -> None:
     items_html = ""
     for p in participants:
         org = f" ({p['organization']})" if p.get("organization") else ""
-        items_html += f"""
-        <li style="margin-bottom: 12px; font-size: 15px; color: #555;
-                   padding: 8px; border-bottom: 1px solid #f0f0f0;">
-            <span style="display: inline-block; width: 32px; height: 32px;
-                         border-radius: 50%; background-color: {p.get('avatar_color', '#007bff')};
-                         color: white; text-align: center; line-height: 32px;
-                         font-weight: bold; font-size: 12px;
-                         margin-right: 10px; vertical-align: middle;">
-                {p.get('avatar_initials', '??')}
-            </span>
-            <strong>{p['role']}:</strong> {p['name']}{org}
-            {_status_badge(p.get('kyc_status', 'Not Started'))}
-        </li>
-        """
+        avatar_color = p.get("avatar_color", "#007bff")
+        avatar_initials = p.get("avatar_initials", "??")
+        badge = _status_badge(p.get("kyc_status", "Not Started"))
+        items_html += (
+            f'<li style="margin-bottom: 12px; font-size: 15px; color: #555;'
+            f' padding: 8px; border-bottom: 1px solid #f0f0f0;">'
+            f'<span style="display: inline-block; width: 32px; height: 32px;'
+            f' border-radius: 50%; background-color: {avatar_color};'
+            f' color: white; text-align: center; line-height: 32px;'
+            f' font-weight: bold; font-size: 12px;'
+            f' margin-right: 10px; vertical-align: middle;">'
+            f'{avatar_initials}</span>'
+            f'<strong>{p["role"]}:</strong> {p["name"]}{org}'
+            f'{badge}</li>'
+        )
 
     st.markdown(
         f"""

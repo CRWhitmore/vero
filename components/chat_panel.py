@@ -52,36 +52,29 @@ def render_chat_panel(messages: List[Dict[str, Any]]) -> None:
         flex_direction = "row-reverse" if is_self else "row"
         margin_side = "margin-right: 12px;" if is_self else "margin-left: 12px;"
 
-        chat_html += f"""
-        <div style="display: flex; flex-direction: {flex_direction};
-                    justify-content: {align}; margin-bottom: 18px;
-                    align-items: flex-start;">
-            <div style="width: 40px; height: 40px; border-radius: 50%;
-                        background-color: {avatar_bg}; color: white;
-                        display: flex; align-items: center;
-                        justify-content: center; font-weight: bold;
-                        font-size: 14px; flex-shrink: 0;">
-                {msg.get('avatar_initials', '??')}
-            </div>
-            <div style="{margin_side} max-width: 70%;">
-                <p style="margin: 0 0 4px 0; font-weight: bold;
-                          color: #333; font-size: 13px;">
-                    {msg['sender']}
-                    <span style="font-size: 11px; color: #999;
-                                 font-weight: normal; margin-left: 8px;">
-                        {msg.get('timestamp', '')}
-                    </span>
-                </p>
-                <div style="background-color: {bubble_bg};
-                            padding: 10px 14px; border-radius: 12px;
-                            border: {border};
-                            box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
-                    <p style="margin: 0; font-size: 14px; color: #333;
-                              line-height: 1.5;">{msg['text']}</p>
-                </div>
-            </div>
-        </div>
-        """
+        chat_html += (
+            f'<div style="display: flex; flex-direction: {flex_direction};'
+            f' justify-content: {align}; margin-bottom: 18px; align-items: flex-start;">'
+            f'<div style="width: 40px; height: 40px; border-radius: 50%;'
+            f' background-color: {avatar_bg}; color: white;'
+            f' display: flex; align-items: center;'
+            f' justify-content: center; font-weight: bold;'
+            f' font-size: 14px; flex-shrink: 0;">'
+            f'{msg.get("avatar_initials", "??")}'
+            f'</div>'
+            f'<div style="{margin_side} max-width: 70%;">'
+            f'<p style="margin: 0 0 4px 0; font-weight: bold; color: #333; font-size: 13px;">'
+            f'{msg["sender"]}'
+            f'<span style="font-size: 11px; color: #999; font-weight: normal; margin-left: 8px;">'
+            f'{msg.get("timestamp", "")}'
+            f'</span></p>'
+            f'<div style="background-color: {bubble_bg};'
+            f' padding: 10px 14px; border-radius: 12px;'
+            f' border: {border};'
+            f' box-shadow: 0 1px 2px rgba(0,0,0,0.05);">'
+            f'<p style="margin: 0; font-size: 14px; color: #333; line-height: 1.5;">{msg["text"]}</p>'
+            f'</div></div></div>'
+        )
 
     chat_html += "</div>"
     st.markdown(chat_html, unsafe_allow_html=True)
