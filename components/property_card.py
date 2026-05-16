@@ -81,17 +81,27 @@ def render_property_card(listing: Dict[str, Any]) -> None:
     # Get property image
     image_src = get_property_image_base64(listing['property_type'], listing['name'])
 
-    # Build the image HTML
+    # Build the image HTML — wrapped in a button-like div so clicking navigates
+    # to property details. We use a unique id and inject a tiny <script> that
+    # adds an onclick to the div after render.
+    card_img_id = f"card_img_{listing['listing_id']}"
+
     if image_src:
         image_html = (
+            f'<div id="{card_img_id}" style="cursor: pointer; overflow: hidden; height: 200px;">'
             f'<img src="{image_src}" alt="{listing["property_type"]} Property" '
             f'style="width:100%; height:200px; object-fit:cover; display:block; '
             f'filter: contrast(1.1) brightness(1.05) saturate(1.1); '
-            f'image-rendering: -webkit-optimize-contrast;">'
+            f'image-rendering: -webkit-optimize-contrast; '
+            f'transition: transform 0.2s;" '
+            f'onmouseover="this.style.transform=\'scale(1.04)\'" '
+            f'onmouseout="this.style.transform=\'scale(1)\'">'
+            f'</div>'
         )
     else:
         image_html = (
-            f'<div style="background: linear-gradient(135deg, '
+            f'<div id="{card_img_id}" style="cursor: pointer; '
+            f'background: linear-gradient(135deg, '
             f'{listing.get("card_color", "#007bff")}, #2c3e50); '
             f'height:200px; display:flex; align-items:center; '
             f'justify-content:center; color:white; font-size:22px; '
