@@ -10,6 +10,7 @@ import os
 
 from components.realopedia_header import render_realopedia_header, get_image_base64
 from components.footer import render_realopedia_footer
+from components.partner_banner import render_partner_banner
 from components.property_card import render_property_card
 from services.listing_service import get_listings
 from utils.state import init_session_state
@@ -94,7 +95,7 @@ def render_hero_header(active: str = "Buy") -> None:
         + "Browse Commercial Properties"
         + "</h1>"
         + '<p style="margin: 0; font-size: 17px; color: rgba(255,255,255,0.88); text-shadow: 0 1px 6px rgba(0,0,0,0.5);">'
-        + "AI-powered search &amp; matching &nbsp;|&nbsp; Blockchain-secured listings"
+        + "AI-powered search &amp; matching &nbsp;|&nbsp; Verified global listings"
         + "</p>"
         + "</div>"
         + "</div>"
@@ -144,6 +145,7 @@ def main() -> None:
     render_hero_header(active="Buy")   # replaces separate header + filter banner
     render_filter_bar()
     render_grid()
+    render_partner_banner()
     render_realopedia_footer()
 
 

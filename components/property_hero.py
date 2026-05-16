@@ -71,7 +71,6 @@ def render_property_hero(listing: Dict[str, Any]) -> None:
         f"""
         <h2 style="font-size: 34px; font-weight: 700; color: #1a1a1a; margin-bottom: 2px;">
             {listing['name']}
-            <span style="font-size: 14px; background: #e8f5e9; color: #2e7d32; padding: 4px 12px; border-radius: 4px; margin-left: 10px; vertical-align: middle; border: 1px solid #c8e6c9;">🛡️ Blockchain Secure</span>
         </h2>
         <p style="font-size: 17px; color: #666; margin-bottom: 25px;">📍 {listing['location']['address']}</p>
         """,
@@ -134,7 +133,6 @@ def render_property_hero(listing: Dict[str, Any]) -> None:
         if st.button("💼  BUY NOW  💼", key=f"buy_now_{listing['listing_id']}", use_container_width=True, type="primary"):
             go_to_deal_room(listing["listing_id"])
 
-        st.markdown("<p style='text-align: center; font-size: 11px; color: #959da5; margin-top: 10px;'>Secure transaction powered by Vero Blockchain</p>", unsafe_allow_html=True)
         
         # Secondary Actions
         st.button("📞 Contact Broker", use_container_width=True, key=f"contact_{listing['listing_id']}")

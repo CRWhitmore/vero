@@ -29,7 +29,7 @@
       "High-Speed Fiber Optic"
     ],
     "images": {"hero": "office_hero.jpg", "gallery": []},
-    "badges": ["Blockchain Secure"],
+    "badges": [],
     "broker": "John Doe (Real Estate Co.)"
   },
   {
@@ -60,7 +60,7 @@
       "Long Lease in Place"
     ],
     "images": {"hero": "retail_hero.jpg", "gallery": []},
-    "badges": ["Blockchain Secure"],
+    "badges": [],
     "broker": "Emma Watson (London Commercial Group)"
   },
   {
@@ -91,7 +91,7 @@
       "Highway Access"
     ],
     "images": {"hero": "warehouse_hero.jpg", "gallery": []},
-    "badges": ["Blockchain Secure"],
+    "badges": [],
     "broker": "Ahmed Al-Mansoori (Gulf Properties)"
   },
   {
@@ -122,7 +122,7 @@
       "85% Occupancy"
     ],
     "images": {"hero": "hotel_hero.jpg", "gallery": []},
-    "badges": ["Blockchain Secure"],
+    "badges": [],
     "broker": "Marie Dubois (Paris Hotel Brokers)"
   },
   {
@@ -153,7 +153,7 @@
       "EV Charging"
     ],
     "images": {"hero": "tech_hero.jpg", "gallery": []},
-    "badges": ["Blockchain Secure"],
+    "badges": [],
     "broker": "Wei Lin Tan (Asia Pacific CRE)"
   },
   {
@@ -184,7 +184,7 @@
       "Environmental Cleared"
     ],
     "images": {"hero": "land_hero.jpg", "gallery": []},
-    "badges": ["Blockchain Secure"],
+    "badges": [],
     "broker": "Hans Mueller (Frankfurt Land Brokers)"
   }
 ]

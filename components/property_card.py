@@ -78,14 +78,6 @@ def render_property_card(listing: Dict[str, Any]) -> None:
     Args:
         listing: A listing dict (see data/listings.json schema).
     """
-    badges_html = ""
-    for badge in listing.get("badges", []):
-        badges_html += (
-            f'<span style="background-color: #28a745; color: white; '
-            f'padding: 3px 8px; border-radius: 4px; font-size: 11px; '
-            f'margin-right: 5px;">🔒 {badge}</span>'
-        )
-
     # Get property image
     image_src = get_property_image_base64(listing['property_type'], listing['name'])
 
@@ -141,7 +133,6 @@ def render_property_card(listing: Dict[str, Any]) -> None:
             <p style="margin: 0 0 10px 0; font-size: 13px; color: #444; flex: 1;">
                 {description}
             </p>
-            {f'<div style="margin-bottom: 10px;">{badges_html}</div>' if badges_html else ''}
         </div>
     </div>
     """
