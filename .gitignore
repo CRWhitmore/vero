@@ -14,9 +14,9 @@ __pycache__/
 .pytest_cache/
 .ipynb_checkpoints/
 
-# --- Streamlit / Local Testing ---
-.streamlit/config.toml
+# --- Streamlit ---
+# config.toml is intentionally committed so the theme deploys to streamlit.app
 .streamlit/static/
-# Note: Keep .streamlit/ if you have secrets.toml, 
-# but NEVER commit secrets.toml itself.
+# NEVER commit secrets
 secrets.toml
+.streamlit/secrets.toml
