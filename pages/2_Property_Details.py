@@ -180,9 +180,16 @@ def render_description_block(listing: dict) -> None:
 
 
 def main() -> None:
-    """Render property details for the property in session_state."""
+    """Render property details for the property in session_state or query params."""
     init_session_state()
     render_hero_header(active="Buy")
+
+    # Support navigation via URL query param (e.g. from image href links)
+    params = st.query_params
+    if "listing_id" in params:
+        qp_id = params["listing_id"]
+        if qp_id != st.session_state.get("selected_property_id"):
+            st.session_state["selected_property_id"] = qp_id
 
     listing_id = st.session_state.get("selected_property_id")
     listing = get_listing(listing_id) if listing_id else None
